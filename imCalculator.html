@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+        body {
+            border: 3px solid;
+            height: 285px;
+            width: 200px;
+            color: rebeccapurple;
+            background: #D1CDFF;
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            left: 40%;
+            top: 30%;
+        }
+
+
+        input {
+
+            padding: 17px;
+            margin: 0px;
+            width: 45px;
+            background: linear-gradient(white, #7874A6 100%);
+        }
+
+        .calc {
+
+            width: 160px;
+        }
+
+        td {
+
+            width: 50px;
+            height: 50px;
+            padding: px;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <form name="form">
+            <input class="calc">
+        </form>
+
+
+        <table>
+            <tr>
+                <td><input type="button" value="7" onclick="insrt(7)"></td>
+                <td><input type="button" value="8" onclick="insrt(8)"></td>
+                <td><input type="button" value="9" onclick="insrt(9)"></td>
+                <td><input type="button" value="/" onclick="insrt('/')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="4" onclick="insrt(4)"></td>
+                <td><input type="button" value="5" onclick="insrt(5)"></td>
+                <td><input type="button" value="6" onclick="insrt(6)"></td>
+                <td><input type="button" value="x" onclick="insrt('*')"></td>
+
+            </tr>
+
+            <tr>
+                <td><input type="button" value="1" onclick="insrt(1)"></td>
+                <td><input type="button" value="2" onclick="insrt(2)"></td>
+                <td><input type="button" value="3" onclick="insrt(3)"></td>
+                <td><input type="button" value="-" onclick="insrt('-')"></td>
+
+            </tr>
+            <tr>
+                <th><input type="button" value="0" onclick="insrt(0)"></th>
+                <td><input type="button" value="C" onclick="cl()"></td>
+                <td><input type="button" value="=" onclick="eql()"></td>
+                <td><input type="button" value="+" onclick="insrt('+')"></td>
+
+            </tr>
+
+
+        </table>
+    </div>
+    <script>
+        function insrt(num) {
+            $('.calc').val($('.calc').val() + num);
+
+        }
+
+        function eql() {
+            $('.calc').val(eval($('.calc').val()));
+        }
+
+        function cl() {
+            $('.calc').val('');
+        }
+    </script>
+</body>
+
+</html>
